@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const SERVER_API_URL = "http://localhost:8080/api";
-// const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
+// const SERVER_API_URL = "http://localhost:8080/api";
+const SERVER_API_URL = process.env.REACT_APP_API_BASE;
 
 const USERS_URL = `${SERVER_API_URL}/users`;
 
@@ -10,17 +10,12 @@ const api = axios.create({ withCredentials: true });
 
 
 export const getAllUser = async () => {
-    console.log( "in service");
-    console.log(USERS_URL);
     const response = await api.get(USERS_URL);
     return response.data;
 }
 
 export const getUser = async (uid) => {
-    
-    console.log("i am in service");
     const response = await api.get(`${USERS_URL}/${uid}`);
-    console.log("i am out service");
     console.log(response);
     return response.data;
 }

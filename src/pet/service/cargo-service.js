@@ -1,7 +1,12 @@
 import axios from 'axios';
 
-const CARGO_API = "http://localhost:8080/api";
-const CARGO_URL = `${CARGO_API}/cargo`;
+
+const SERVER_API_URL = process.env.REACT_APP_API_BASE;
+const CARGO_URL = `${SERVER_API_URL}/cargo`;
+
+
+// const CARGO_API = "http://localhost:8080/api";
+// const CARGO_URL = `${CARGO_API}/cargo`;
 
 export const findCargoByName = async (name) => {
     const response = await axios.get(`${CARGO_URL}/${name}`, name)

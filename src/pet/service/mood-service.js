@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-const MOOD_API = "http://localhost:8080/api";
-const MOOD_URL = `${MOOD_API}/mood`;
+const SERVER_API_URL = process.env.REACT_APP_API_BASE;
+const MOOD_URL = `${SERVER_API_URL}/mood`;
+
+// const MOOD_API = "http://localhost:8080/api";
+// const MOOD_URL = `${MOOD_API}/mood`;
 
 export const createMood = async (mood) => {
     const response = await axios.post(MOOD_URL, mood)
