@@ -2,7 +2,7 @@ import axios from "axios";
 
 // const SERVER_API_URL = "http://localhost:8080/api";
 // const SERVER_API_URL = process.env.REACT_APP_API_BASE;
-const SERVER_API_URL = "https://fianl-project.onrender.com/api"
+const SERVER_API_URL = "https://fianl-project.onrender.com/api";
 
 const USERS_URL = `${SERVER_API_URL}/users`;
 
