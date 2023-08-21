@@ -2,6 +2,7 @@ import axios from 'axios';
 
 
 const SERVER_API_URL = process.env.REACT_APP_API_BASE;
+console.log(SERVER_API_URL);
 const CARGO_URL = `${SERVER_API_URL}/cargo`;
 
 
