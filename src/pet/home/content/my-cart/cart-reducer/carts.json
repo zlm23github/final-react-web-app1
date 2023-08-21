@@ -1,0 +1,10 @@
+[
+    { 
+        "_id": 1,
+        "name": "Halo",
+        "description": "cat food",
+        "image": "cat.png",
+        "price": "$22.99",
+        "addCart": true
+    }
+]

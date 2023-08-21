@@ -1,0 +1,15 @@
+.regist-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.regist-wrap {
+    position: fixed;
+    left: 40px;
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

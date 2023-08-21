@@ -1,0 +1,32 @@
+/* MoodItem.css */
+.cargo-item {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.anonymous-profile {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.mood-topic {
+    flex: 1; /* Expand to fill remaining space */
+    text-align: right;
+}

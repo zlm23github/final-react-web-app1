@@ -1,0 +1,61 @@
+.buttonStyle {
+    
+    background-color: darkblue; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    height: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: -33px;
+    cursor: pointer;
+}
+
+.mag {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-left: -33px;
+    margin-right: -50px;
+    margin-top: 10px;
+    object-fit: cover;
+    font-size: large;
+}
+
+.login-regist {
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    margin-top: -15px;
+}
