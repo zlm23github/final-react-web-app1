@@ -27,13 +27,13 @@ function Edit() {
         navigate("/profile/next");
     }
 
-    useEffect(() => {
-        const loadProfile = async () => {
-            const { payload } = await dispatch(getThunk(profile));
-            setProfile(payload)
-            };
-            loadProfile();
-      }, []); 
+    // useEffect(() => {
+    //     const loadProfile = async () => {
+    //         const { payload } = await dispatch(getThunk(profile));
+    //         setProfile(payload)
+    //         };
+    //         loadProfile();
+    //   }, []); 
     return(
         <div className="container">
             {profile &&
@@ -47,7 +47,6 @@ function Edit() {
                         placeholder="Enter your FirstName"
                         value={profile.firstName}
                         onChange={(event) => {
-                            console.log("onChange");
                             const newProfile = {
                             ...profile, firstName: event.target.value,
                             };
