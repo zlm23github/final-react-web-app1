@@ -15,7 +15,6 @@ export const getAllUserThunk = createAsyncThunk(
 export const findUserByIdThunk = createAsyncThunk(
     "user/findUserById",
     async (userId) => {
-        console.log("I am in thunk");
         const response = await authService.getUser(userId);
         
         return response;

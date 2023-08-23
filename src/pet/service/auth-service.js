@@ -17,7 +17,6 @@ export const getAllUser = async () => {
 
 export const getUser = async (uid) => {
     const response = await api.get(`${USERS_URL}/${uid}`);
-    console.log(response);
     return response.data;
 }
 

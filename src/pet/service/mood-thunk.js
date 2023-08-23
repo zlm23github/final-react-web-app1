@@ -5,7 +5,6 @@ import * as service from "./mood-service";
 export const findMoodThunk = createAsyncThunk(
     'mood/findMood',
     async () => {
-        console.log("in thunk");
         const mood = await service.findMood()
         return mood.data
     }

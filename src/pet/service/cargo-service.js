@@ -18,9 +18,6 @@ export const findCargoByName = async (name) => {
 
 export const findCargoById = async (cid) => {
     const response = await axios.get(`${CARGO_URL}/${cid}`, cid)
-    console.log("response service");
-    console.log(`${cid}`);
-    console.log(`${CARGO_URL}/${cid}`);
 
     return response
 }

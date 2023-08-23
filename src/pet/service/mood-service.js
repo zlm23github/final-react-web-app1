@@ -14,8 +14,6 @@ export const createMood = async (mood) => {
     }
    
 export const findMood = async () => {
-    console.log("in service");
-    console.log(MOOD_URL);
     const response = await axios.get(MOOD_URL);
     return response;
     }
