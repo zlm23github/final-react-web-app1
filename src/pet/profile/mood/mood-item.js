@@ -77,7 +77,7 @@ const MoodItem = (
                                 {current.length > 0 ? <img className="user-avatar" src={current[0].img} onClick={profileDetailHandle}></img> : <img className="user-avatar" src="/images/anonymous.png" onClick={profileDetailHandle}></img>}
                             </div>
                             <div className="col-8">
-                                {current.length > 0 ? current[0].firstName : "anonymous"}
+                                {currentUser.firstName ? current[0].firstName : "anonymous"}
                             </div>
                             <button className="x-button" onClick={() => deleteMoodHandler(mood._id)}>
                                 <FontAwesomeIcon className="x-mark" icon={faXmark}/>
