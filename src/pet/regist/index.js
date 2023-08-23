@@ -60,7 +60,7 @@ function Regist() {
                                 className="form-select"
                                 value={user.img}
                                 onChange={(e) => setUser({ ...user, img: e.target.value })}>
-                                <option Value={"/images/anonymous.png"}>Default</option>
+                                <option value={"/images/anonymous.png"}>Default</option>
                                 <option value="/images/man.png">Male</option>
                                 <option value="/images/woman.png">Female</option>
                                 
