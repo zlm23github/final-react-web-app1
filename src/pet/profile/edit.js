@@ -36,7 +36,7 @@ function Edit() {
     //         loadProfile();
     //   }, []); 
     return(
-        <div className="container">
+        <div className="edit-container">
             {profile &&
                 (
                 <form className="profile-form">
