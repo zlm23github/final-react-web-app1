@@ -11,7 +11,8 @@ function Regist() {
     const [user, setUser] = useState(
         {
             username: "",
-            password: ""
+            password: "",
+            img: "/images/anonymous.png"
         });
 
     const handleRegist = async (e) => {

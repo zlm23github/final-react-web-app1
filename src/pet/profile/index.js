@@ -53,7 +53,6 @@ function Profile() {
                                 placeholder="Enter your FirstName"
                                 value={profile.firstName}
                                 onChange={(event) => {
-                                    console.log("onChange");
                                     const newProfile = {
                                     ...profile, firstName: event.target.value,
                                     };

@@ -95,7 +95,7 @@ const MoodItem = (
                     <div className="user-info" >
                         <div className="row">
                             <div className="col-4">
-                                {current.length > 0 ? <img className="user-avatar" src={current[0].img} onClick={profileDetailHandle}></img> : <img className="user-avatar" src="/images/anonymous.png" onClick={profileDetailHandle}></img>}
+                                <img className="user-avatar" src={current[0].img}> </img>
                             </div>
                             <div className="col-8">
                                 {current.length > 0 ? current[0].firstName : "anonymous"}
