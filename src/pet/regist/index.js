@@ -18,6 +18,7 @@ function Regist() {
 
     const handleRegist = async (e) => {
         try{
+            console.log("regist");
             const newUser = await register(user);
             setUser(newUser);
             navigate("/profile");
@@ -59,9 +60,10 @@ function Regist() {
                                 className="form-select"
                                 value={user.img}
                                 onChange={(e) => setUser({ ...user, img: e.target.value })}>
+                                <option Value={"/images/anonymous.png"}>Default</option>
                                 <option value="/images/man.png">Male</option>
                                 <option value="/images/woman.png">Female</option>
-                                <option defaultValue={"/images/anonymous.png"}>Default</option>
+                                
                             </select>
                         </fieldset>
                         <fieldset style={{paddingTop: "10px"}} >
