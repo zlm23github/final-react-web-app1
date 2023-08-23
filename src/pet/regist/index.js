@@ -20,8 +20,8 @@ function Regist() {
         try{
             console.log("regist");
             const newUser = await register(user);
-            setUser(newUser);
-            navigate("/profile");
+            await setUser(newUser);
+            await navigate("/profile");
         } catch(e){
             alert(e)
         }
