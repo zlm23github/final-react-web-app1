@@ -13,6 +13,7 @@ function Regist() {
         {
             username: "",
             password: "",
+            firstName: "",
             img: "/images/anonymous.png",
         });
     
