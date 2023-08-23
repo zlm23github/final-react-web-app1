@@ -5,9 +5,7 @@ import * as authService from "./auth-service";
 export const getAllUserThunk = createAsyncThunk(
     "user/getAllUser",
     async () => {
-        console.log("in thunk");
         const response = await authService.getAllUser();
-        console.log(response);
         return response;
     }
 )

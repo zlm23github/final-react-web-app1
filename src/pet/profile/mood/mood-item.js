@@ -20,17 +20,12 @@ const MoodItem = (
     }
 ) => {
 
-    // const {currentUser} = useSelector(state => state.user)
-    // const [profile, setProfile] = useState(currentUser)
-    // console.log("current");
-    // console.log(profile);
-    // console.log(profile._id);
-    
-    // const [moodProfile, setMoodProfile] = useState(mood)
+
     const [like, setLike] = useState(mood.like);
     const [likes, setLikes] = useState(mood.likes + 1);
     
     const  {users}  = useSelector(state => state.user)
+    const currentUser = useSelector(state => state.user.currentUser);
     const [allUsers, setAllUsers] = useState(users)
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -49,35 +44,19 @@ const MoodItem = (
         dispatch(getAllUserThunk())
         .then((data) => {
             setAllUsers(data.payload);
-            console.log("22222222222");
-            console.log(allUsers);
         })
     }, [dispatch]);
 
-    const deleteMoodHandler = (id) => {
-        dispatch(deleteMoodThunk(id));
-    }
+    const deleteMoodHandler = id => {
+        if (mood.mid === currentUser._id) {
+          dispatch(deleteMoodThunk(id));
+        } else {
+          alert("You can only delete your own mood.");
+        }
+      };
+
 
     const current = allUsers.filter(a => a._id === mood.mid);
-    console.log(current);
-    
-    // useEffect(async () => {
-    //     const newProfile = {
-    //         ...moodProfile, mid: profile._id,
-    //     };
-        
-    //     setMoodProfile(newProfile)
-    //     await dispatch(updateMoodThunk(moodProfile))
-    //     console.log(moodProfile);
-    // }, [])
-
-    // const fetchData = async (userId) => {
-    //     const action = await dispatch(findUserByIdThunk(userId));
-    //     const data = action.payload;
-    //     setCargoData(data);
-    //     console.log("data");
-    //     console.log(cargoData);
-    // }
     
     const profileDetailHandle = () => {
         if(current.length > 0) {
@@ -112,9 +91,6 @@ const MoodItem = (
                     </div>
                                 
                 </div>
-                {/* <div className="row">
-
-                </div> */}
             </li>
         </div>
     );

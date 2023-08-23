@@ -12,8 +12,7 @@ function Profile() {
     const navigate = useNavigate();
 
     const save = async (e) => { 
-        try{
-            
+        try{ 
             await dispatch(updateUserThunk(profile)); 
             navigate("/profile/next");
         } catch(e){
@@ -22,27 +21,29 @@ function Profile() {
         
     };
 
-    // const notNow = async () => {
-    //     console.log("notNow");
-    //     console.log(profile);
-    //     const { payload } = await dispatch(profileThunk());
-    //     setProfile(payload);
-    //     navigate("/profile/next");
-    // }
-
     useEffect(() => {
-        const loadProfile = async () => {
-            
+        if (profile === null) {
+          const loadProfile = async () => {
             const { payload } = await dispatch(profileThunk());
-            setProfile(payload);             
-            };
-            loadProfile();
-      }, []); 
+            setProfile(payload);
+          };
+          loadProfile();
+        }
+      }, [dispatch, profile]);
+
+    // useEffect(() => {
+    //     const loadProfile = async () => {
+            
+    //         const { payload } = await dispatch(profileThunk());
+    //         setProfile(payload);             
+    //         };
+    //         loadProfile();
+    //   }, []); 
     return(
         <div className="profile-container">
             <div className="profile-content">
                 <form className="profile-name-container">
-                    {profile &&
+                    {profile !== null &&
                         (
                         <div className="profile-name-container">
                             <div className="profile-name">
