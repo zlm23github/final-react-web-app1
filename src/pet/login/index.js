@@ -11,22 +11,36 @@ function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleLogin = async (e) => {
-        let flag = false;
+        e.preventDefault(); 
+        
         try {
-            await dispatch(loginThunk({ username, password })).then((resp)=>{
-                    if(resp.payload != null) {
-                        flag = true;
-                        return navigate("/profile");
-                    }
-                }
-            )
-            if(!flag) return alert("Username or password wrong!");
+            const resp = await dispatch(loginThunk({ username, password }));
             
-            
+            if (resp.payload != null) {
+                navigate("/profile");
+            } else {
+                alert("Username or password wrong!");
+            }
         } catch (e) {
             alert(e);
-        }
-    }
+        }};
+    // const handleLogin = async (e) => {
+    //     let flag = false;
+    //     try {
+    //         await dispatch(loginThunk({ username, password })).then((resp)=>{
+    //                 if(resp.payload != null) {
+    //                     flag = true;
+    //                     return navigate("/profile");
+    //                 }
+    //             }
+    //         )
+    //         if(!flag) return alert("Username or password wrong!");
+            
+            
+    //     } catch (e) {
+    //         alert(e);
+    //     }
+    // }
 
     const backToHome = () => {
         navigate("/home")
