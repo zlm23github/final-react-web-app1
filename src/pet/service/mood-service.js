@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // const SERVER_API_URL = process.env.REACT_APP_API_BASE;
 
-const SERVER_API_URL = "https://fianl-project.onrender.com/api";
-const MOOD_URL = `${SERVER_API_URL}/mood`;
+const MOOD_API = "https://fianl-project.onrender.com/api";
+const MOOD_URL = `${MOOD_API}/mood`;
 
 // const MOOD_API = "http://localhost:8080/api";
 // const MOOD_URL = `${MOOD_API}/mood`;
