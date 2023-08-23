@@ -12,6 +12,7 @@ function Profile() {
     const navigate = useNavigate();
 
     const save = async (e) => { 
+        e.preventDefault();
         try{ 
             await dispatch(updateUserThunk(profile)); 
             navigate("/profile/next");
