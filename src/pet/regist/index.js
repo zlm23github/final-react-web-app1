@@ -12,7 +12,7 @@ function Regist() {
         {
             username: "",
             password: "",
-            img: "/images/anonymous.png"
+            img: "/images/anonymous.png",
         });
 
     const handleRegist = async (e) => {
