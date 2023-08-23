@@ -12,7 +12,7 @@ function Regist() {
         {
             username: "",
             password: "",
-            img: "",
+            img: "/images/anonymous.png",
         });
     
 
@@ -61,7 +61,7 @@ function Regist() {
                                 onChange={(e) => setUser({ ...user, img: e.target.value })}>
                                 <option value="/images/man.png">Male</option>
                                 <option value="/images/woman.png">Female</option>
-                                <option value="/images/anonymous.png">Default</option>
+                                <option defaultValue={"/images/anonymous.png"}>Default</option>
                             </select>
                         </fieldset>
                         <fieldset style={{paddingTop: "10px"}} >
