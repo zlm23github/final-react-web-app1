@@ -4,9 +4,10 @@ import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { register } from "../service/auth-service";
 import "./regist.css"
+import { registerThunk } from "../service/auth-thunk";
 
 function Regist() {
-    const currentUser = false;
+
     const navigate = useNavigate();
     const [user, setUser] = useState(
         {
@@ -17,16 +18,18 @@ function Regist() {
     
 
     const handleRegist = async (e) => {
+        e.preventDefault();
         try{
-            console.log("regist");
             const newUser = await register(user);
-            await setUser(newUser);
-            await navigate("/profile");
+            setUser(newUser);
+            navigate("/profile");
         } catch(e){
             alert(e)
         }
         
     };
+
+    
 
     const backToHome = () => {
         navigate("/home")
@@ -56,6 +59,7 @@ function Regist() {
                                 onChange={(e) => setUser({...user, password: e.target.value})}/>
                         </fieldset>
                         <fieldset>
+                            <label>Gender:</label>
                             <select
                                 className="form-select"
                                 value={user.img}
