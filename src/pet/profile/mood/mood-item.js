@@ -57,8 +57,6 @@ const MoodItem = (
 
 
     const current = allUsers.filter(a => a._id === mood.mid);
-    console.log("current");
-    console.log(current);
     
     const profileDetailHandle = () => {
         if(current.length > 0) {
