@@ -25,7 +25,7 @@ function Regist() {
             setUser(newUser);
             navigate("/profile");
         } catch(e){
-            alert(e)
+            alert("Username already been taken.")
         }
         
     };

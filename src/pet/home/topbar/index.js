@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,26 +23,42 @@ function TopBar() {
     const navigate = useNavigate();
 
 
-    
    
     const fetchData = async () => {
         const action = await dispatch(findCargoThunk());
         const data = action.payload;
+        console.log("data");
+        console.log(data);
         setCargoData(data);
+        return data.some(item => item.name.toLowerCase().includes(input.toLowerCase()));
+
     }
+
     
-    const handleSearch = (e) => {
+    
+    const handleSearch = async (e) => {
+        e.preventDefault();
         try {
-            fetchData();
-            if(cargoData.some(item => item.name.includes(input))) {
+            const flag = await fetchData();
+            if (flag) {
                 navigate("/search");
             } else {
-                throw Error("Not found");
+                throw new Error("Not found");
             }
+            // console.log("cargo");
+            // console.log(cargoData);
+            // if(cargoData.some(item => item.name.includes(input))) {
+            //     console.log("i am in ");
+            //     navigate("/search");
+            // } else {
+            //     throw new Error("Not found");
+            // }
         } catch(e) {
             alert(e);
         }
     }
+
+   
     
     const handleLogout = () => {
         dispatch(logoutThunk())
@@ -64,8 +80,8 @@ function TopBar() {
                             placeholder="Type to Search"
                             className="form-control rounded-pill ps-5 input"
                             value={input}
-                            onChange={(e) => 
-                                dispatch(setInput(e.target.value))}/>
+                            onChange={async (e) => 
+                                await dispatch(setInput(e.target.value))}/>
                         <button
                             className="search-button"
                             onClick={handleSearch}>

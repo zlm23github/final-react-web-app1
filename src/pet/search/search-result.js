@@ -11,10 +11,11 @@
         const navigate = useNavigate();
         const input = useSelector(state => state.input);
         const { cargo } = useSelector(state => state.cargo)
-
+        
         const filteredCargo = cargo.filter(item =>
             item.name.toLowerCase().includes(input.toLowerCase())
-            )
+        );
+       
 
         const backHandle = () => {
             navigate("/home")
