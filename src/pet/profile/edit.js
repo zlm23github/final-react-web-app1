@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch} from "react-redux";
 import { useNavigate} from "react-router";
 import { profileThunk, logoutThunk, updateUserThunk, getThunk } from "../service/auth-thunk";
-import "./profile.css"
+import "./edit.css"
 
 
 function Edit() {
@@ -39,9 +39,9 @@ function Edit() {
         <div className="container">
             {profile &&
                 (
-                <form className="profile-name-container">
+                <form className="profile-form">
                     <div className="profile-name">
-                    <label>FirstName: </label>
+                    <label className="form-label">FirstName: </label>
                     <input 
                         className="form-control" 
                         type="text" 
@@ -56,7 +56,7 @@ function Edit() {
                     </div>
 
                     <div className="profile-name">
-                    <label>LastName: </label>
+                    <label className="form-label">LastName: </label>
                     <input 
                         className="form-control" 
                         type="text" value={profile.lastName}
@@ -70,7 +70,7 @@ function Edit() {
                     </div>
 
                     <div className="profile-name">
-                        <label>Email: </label>
+                        <label className="form-label">Email: </label>
                         <input 
                             className="form-control" 
                             type="text" 
@@ -85,7 +85,7 @@ function Edit() {
                     </div>
 
                     <div className="profile-name">
-                        <label>Address: </label>
+                        <label className="form-label">Address: </label>
                         <input 
                             className="form-control" 
                             type="text" 
