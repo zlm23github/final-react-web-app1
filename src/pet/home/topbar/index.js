@@ -77,7 +77,7 @@ function TopBar() {
                     <form className="form">
                         <input 
                             type="name"
-                            placeholder="Type to Search"
+                            placeholder="Looking for any product?"
                             className="form-control rounded-pill ps-5 input"
                             value={input}
                             onChange={async (e) => 
