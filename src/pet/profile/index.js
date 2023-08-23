@@ -13,7 +13,7 @@ function Profile() {
 
     const save = async (e) => { 
         try{
-
+            
             await dispatch(updateUserThunk(profile)); 
             navigate("/profile/next");
         } catch(e){
@@ -44,7 +44,7 @@ function Profile() {
                 <form className="profile-name-container">
                     {profile &&
                         (
-                        <form className="profile-name-container">
+                        <div className="profile-name-container">
                             <div className="profile-name">
                             <label>FirstName: </label>
                             <input 
@@ -108,7 +108,7 @@ function Profile() {
                                 <button className="btn btn-primary"
                                     onClick={save}>save</button>
                             </div>
-                        </form>
+                        </div>
                     )}
                 </form>
                 <div style={{ float: "right"}}>

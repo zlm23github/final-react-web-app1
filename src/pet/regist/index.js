@@ -12,8 +12,9 @@ function Regist() {
         {
             username: "",
             password: "",
-            img: "/images/anonymous.png",
+            img: "",
         });
+    
 
     const handleRegist = async (e) => {
         try{
@@ -52,6 +53,16 @@ function Regist() {
                                 value={user.password}
                                 placeholder="Password"
                                 onChange={(e) => setUser({...user, password: e.target.value})}/>
+                        </fieldset>
+                        <fieldset>
+                            <select
+                                className="form-select"
+                                value={user.img}
+                                onChange={(e) => setUser({ ...user, img: e.target.value })}>
+                                <option value="/images/man.png">Male</option>
+                                <option value="/images/woman.png">Female</option>
+                                <option value="/images/anonymous.png">Default</option>
+                            </select>
                         </fieldset>
                         <fieldset style={{paddingTop: "10px"}} >
                             

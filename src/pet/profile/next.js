@@ -31,8 +31,6 @@ function Next() {
     //     await dispatch(updateUserThunk(profile));
     //     setWhatsYourMood("");
     // }
-    console.log("232341");
-    console.log(profile._id);
     const moodClickHandler = () => {
         const newMood = {
             topic: whatsYourMood,
